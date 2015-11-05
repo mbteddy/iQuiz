@@ -14,6 +14,10 @@
 		BECDBD981BE3F68200C95A89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BECDBD961BE3F68200C95A89 /* LaunchScreen.storyboard */; };
 		BECDBDA31BE3F68200C95A89 /* iQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECDBDA21BE3F68200C95A89 /* iQuizTests.swift */; };
 		BECDBDAE1BE3F68200C95A89 /* iQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECDBDAD1BE3F68200C95A89 /* iQuizUITests.swift */; };
+		BECDBDBC1BE4386700C95A89 /* SubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECDBDBB1BE4386700C95A89 /* SubjectTableViewCell.swift */; };
+		BECDBDBE1BE46B1800C95A89 /* SubjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECDBDBD1BE46B1800C95A89 /* SubjectTableViewController.swift */; };
+		BECDBDC01BE46C7400C95A89 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECDBDBF1BE46C7400C95A89 /* Subject.swift */; };
+		BECDBDC11BE46C7400C95A89 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECDBDBF1BE46C7400C95A89 /* Subject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,9 @@
 		BECDBDA91BE3F68200C95A89 /* iQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECDBDAD1BE3F68200C95A89 /* iQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuizUITests.swift; sourceTree = "<group>"; };
 		BECDBDAF1BE3F68200C95A89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BECDBDBB1BE4386700C95A89 /* SubjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectTableViewCell.swift; sourceTree = "<group>"; };
+		BECDBDBD1BE46B1800C95A89 /* SubjectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectTableViewController.swift; sourceTree = "<group>"; };
+		BECDBDBF1BE46C7400C95A89 /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +107,9 @@
 				BECDBD8D1BE3F68200C95A89 /* AppDelegate.swift */,
 				BECDBD8F1BE3F68200C95A89 /* ViewController.swift */,
 				BECDBD911BE3F68200C95A89 /* Main.storyboard */,
+				BECDBDBD1BE46B1800C95A89 /* SubjectTableViewController.swift */,
+				BECDBDBF1BE46C7400C95A89 /* Subject.swift */,
+				BECDBDBB1BE4386700C95A89 /* SubjectTableViewCell.swift */,
 				BECDBD941BE3F68200C95A89 /* Assets.xcassets */,
 				BECDBD961BE3F68200C95A89 /* LaunchScreen.storyboard */,
 				BECDBD991BE3F68200C95A89 /* Info.plist */,
@@ -259,7 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BECDBDBE1BE46B1800C95A89 /* SubjectTableViewController.swift in Sources */,
+				BECDBDC01BE46C7400C95A89 /* Subject.swift in Sources */,
 				BECDBD901BE3F68200C95A89 /* ViewController.swift in Sources */,
+				BECDBDBC1BE4386700C95A89 /* SubjectTableViewCell.swift in Sources */,
 				BECDBD8E1BE3F68200C95A89 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BECDBDC11BE46C7400C95A89 /* Subject.swift in Sources */,
 				BECDBDA31BE3F68200C95A89 /* iQuizTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

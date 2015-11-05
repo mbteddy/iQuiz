@@ -9,15 +9,29 @@
 import UIKit
 
 class SubjectTableViewController: UITableViewController {
+    
+    // MARK: Properties
+    
+    var subjects = [Subject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // Load the sample data.
+        loadSampleMeals()
+    }
+    
+    func loadSampleMeals() {
+        let marvelPic = UIImage(named: "Marvel")!
+        let marvel = Subject(name: "Marvel", image: marvelPic, description: "sadafd")
+        
+        let mathPic = UIImage(named: "Math")!
+        let math = Subject(name: "Math", image: mathPic, description: "dasfsdf")
+        
+        let sciencePic = UIImage(named: "Science")!
+        let science = Subject(name: "Science", image: sciencePic, description: "dsafdafsdfas")
+        
+        subjects += [marvel, math, science]
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,24 +42,40 @@ class SubjectTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return subjects.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        
+        // Table view cells are reused and should be dequeued using a cell identifier.
+        let cellIdentifier = "SubjectTableViewCell"
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! SubjectTableViewCell
+        
+        let subject = subjects[indexPath.row]
 
-        // Configure the cell...
+        cell.subjectLabel.text = subject.name
+        cell.subjectImage.image = subject.image
+        cell.subjectDescription.text = subject.description
 
         return cell
     }
-    */
+    
+    @IBAction func settings(sender: AnyObject) {
+        let alertController = UIAlertController(title: "Settings", message: "Settings go here", preferredStyle: .Alert)
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
 
     /*
     // Override to support conditional editing of the table view.

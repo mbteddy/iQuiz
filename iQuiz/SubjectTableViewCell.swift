@@ -10,6 +10,13 @@ import UIKit
 
 class SubjectTableViewCell: UITableViewCell {
 
+    //MARK: Properties
+    @IBOutlet weak var subjectLabel: UILabel!
+    @IBOutlet weak var subjectImage: UIImageView!
+    @IBOutlet weak var subjectDescription: UILabel!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
