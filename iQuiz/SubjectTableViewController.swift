@@ -23,13 +23,23 @@ class SubjectTableViewController: UITableViewController {
     
     func loadSampleMeals() {
         let marvelPic = UIImage(named: "Marvel")!
-        let marvel = Subject(name: "Marvel", image: marvelPic, description: "sadafd")
+        let marvelQuestion1 = ["question": "Who is a Marvel superhero?", "answer1": "batman", "answer2": "superman", "answer3": "spiderman", "answer4": "ironman", "correctAnswer": "4"]
+        let marvelQuestion2 = ["question": "Who is not a Marvel superhero?", "answer1": "batman", "answer2": "superman", "answer3": "spiderman", "answer4": "ironman", "correctAnswer": "1"]
+
+        let marvelQuestions = [marvelQuestion1, marvelQuestion2]
+        let marvel = Subject(name: "Marvel", image: marvelPic, description: "sadafd", questions: marvelQuestions)
         
         let mathPic = UIImage(named: "Math")!
-        let math = Subject(name: "Math", image: mathPic, description: "dasfsdf")
+        let mathQuestion1 = ["question": "What is 1+1", "answer1": "3", "answer2": "6", "answer3": "2", "answer4": "16", "correctAnswer": "3"]
+        let mathQuestion2 = ["question": "What is 3*1", "answer1": "3", "answer2": "6", "answer3": "2", "answer4": "16", "correctAnswer": "3"]
+        let mathQuestions = [mathQuestion1, mathQuestion2]
+        let math = Subject(name: "Math", image: mathPic, description: "questions about math", questions: mathQuestions)
         
         let sciencePic = UIImage(named: "Science")!
-        let science = Subject(name: "Science", image: sciencePic, description: "dsafdafsdfas")
+        let scienceQuestion1 = ["question": "What is 1+1", "answer1": "3", "answer2": "6", "answer3": "2", "answer4": "16", "correctAnswer": "3"]
+        let scienceQuestion2 = ["question": "What is 3*1", "answer1": "3", "answer2": "6", "answer3": "2", "answer4": "16", "correctAnswer": "3"]
+        let scienceQuestions = [scienceQuestion1, scienceQuestion2]
+        let science = Subject(name: "Science", image: sciencePic, description: "dsafdafsdfas", questions: scienceQuestions)
         
         subjects += [marvel, math, science]
     }
@@ -112,14 +122,20 @@ class SubjectTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "showQuiz" {
+            var SecondViewController : QuizViewController = segue.destinationViewController as! QuizViewController
+        }
+
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

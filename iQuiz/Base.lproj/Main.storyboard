@@ -30,14 +30,14 @@
                                             <rect key="frame" x="116" y="45" width="476" height="36.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;Name of Subject&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lce-hJ-UxO">
                                             <rect key="frame" x="98" y="8" width="494" height="35"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -48,6 +48,7 @@
                                     <outlet property="subjectDescription" destination="QGG-cg-dbI" id="dle-G9-1k7"/>
                                     <outlet property="subjectImage" destination="YXc-jV-CRL" id="zWV-aZ-c8e"/>
                                     <outlet property="subjectLabel" destination="Lce-hJ-UxO" id="eV6-Wb-DXF"/>
+                                    <segue destination="EVe-Fx-lkg" kind="show" identifier="showQuiz" trigger="accessoryAction" id="W6J-NT-w2C"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -67,6 +68,105 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuE-03-Ie6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="960" y="163"/>
+        </scene>
+        <!--Quiz View Controller-->
+        <scene sceneID="LtJ-5D-JZU">
+            <objects>
+                <viewController id="EVe-Fx-lkg" customClass="QuizViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hfQ-sr-jYL"/>
+                        <viewControllerLayoutGuide type="bottom" id="ReX-Pb-azP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zbJ-2l-UL0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1t5-7d-P6N">
+                                <rect key="frame" x="20" y="262" width="560" height="68"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="answer2Pressed:" destination="EVe-Fx-lkg" eventType="touchUpInside" id="kqe-yV-Xpf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1N-dj-rRU">
+                                <rect key="frame" x="20" y="351" width="560" height="68"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="answer3Pressed:" destination="EVe-Fx-lkg" eventType="touchUpInside" id="iXj-sp-JHd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3L-OM-gci">
+                                <rect key="frame" x="20" y="438" width="560" height="68"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="answer4Pressed:" destination="EVe-Fx-lkg" eventType="touchUpInside" id="9qq-fS-Gx6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ow-Hf-QtZ">
+                                <rect key="frame" x="20" y="64" width="560" height="115"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGK-Rs-L1v">
+                                <rect key="frame" x="382" y="530" width="198" height="50"/>
+                                <animations/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="next:" destination="EVe-Fx-lkg" eventType="touchUpInside" id="aSY-UR-5yk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70l-Zz-kb0">
+                                <rect key="frame" x="20" y="178" width="560" height="68"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="answer1Pressed:" destination="EVe-Fx-lkg" eventType="touchUpInside" id="7F2-fD-HUi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5ow-Hf-QtZ" firstAttribute="centerX" secondItem="zbJ-2l-UL0" secondAttribute="centerX" id="BLa-Th-0XQ"/>
+                            <constraint firstItem="c1N-dj-rRU" firstAttribute="centerX" secondItem="zbJ-2l-UL0" secondAttribute="centerX" id="CFF-zO-sfc"/>
+                            <constraint firstItem="1t5-7d-P6N" firstAttribute="width" secondItem="zbJ-2l-UL0" secondAttribute="width" id="EBe-rl-CQV"/>
+                            <constraint firstItem="e3L-OM-gci" firstAttribute="width" secondItem="zbJ-2l-UL0" secondAttribute="width" id="Hgo-UT-hnG"/>
+                            <constraint firstItem="70l-Zz-kb0" firstAttribute="centerX" secondItem="zbJ-2l-UL0" secondAttribute="centerX" id="Z1p-9z-3dL"/>
+                            <constraint firstItem="c1N-dj-rRU" firstAttribute="width" secondItem="zbJ-2l-UL0" secondAttribute="width" id="bdn-SQ-QVR"/>
+                            <constraint firstItem="e3L-OM-gci" firstAttribute="centerX" secondItem="zbJ-2l-UL0" secondAttribute="centerX" id="duN-rb-b6u"/>
+                            <constraint firstItem="1t5-7d-P6N" firstAttribute="centerX" secondItem="zbJ-2l-UL0" secondAttribute="centerX" id="irx-wt-Fbp"/>
+                            <constraint firstItem="70l-Zz-kb0" firstAttribute="width" secondItem="zbJ-2l-UL0" secondAttribute="width" id="n42-Xe-p8M"/>
+                            <constraint firstItem="5ow-Hf-QtZ" firstAttribute="width" secondItem="zbJ-2l-UL0" secondAttribute="width" id="nIG-Y0-h9i"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="answer1" destination="70l-Zz-kb0" id="vHS-uq-ma2"/>
+                        <outlet property="answer2" destination="1t5-7d-P6N" id="Gdl-rr-404"/>
+                        <outlet property="answer3" destination="c1N-dj-rRU" id="Dzd-7k-npJ"/>
+                        <outlet property="answer4" destination="e3L-OM-gci" id="RcD-tU-drW"/>
+                        <outlet property="question" destination="5ow-Hf-QtZ" id="fNa-cq-XfD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wl6-o4-5pS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1764" y="163"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="93h-P8-w1x">

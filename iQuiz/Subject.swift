@@ -12,11 +12,13 @@ class Subject {
     var name: String
     var image: UIImage?
     var description: String
+    var questions: [Dictionary<String, String>]
     
-    init(name: String, image: UIImage?, description: String) {
+    init(name: String, image: UIImage?, description: String, questions: [Dictionary<String, String>]) {
         self.name = name
         self.image = image
         self.description = description
+        self.questions = questions
     }
     
 //    if name.isEmpty || description.isEmpty < 0 {
