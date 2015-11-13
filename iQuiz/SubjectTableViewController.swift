@@ -8,41 +8,32 @@
 
 import UIKit
 
+struct Question {
+    var question : String
+    var answers : [String]
+    var correctAnswer: String
+}
+
 class SubjectTableViewController: UITableViewController {
     
-    // MARK: Properties
+    let subjectNames = ["Marvel", "Math", "Science"]
+    let subjectDescription = ["about superheros","math stuffs","Science RULES -Bill Nye"]
+    let subjectImages = [UIImage(named: "Marvel"), UIImage(named: "Math"), UIImage(named: "Science")]
     
-    var subjects = [Subject]()
-
+    // MARK: Properties
+    let marvelQuestions = [Question(question: "Who is a Marvel superhero?", answers: ["batman", "superman", "spiderman", "ironman"], correctAnswer: "ironman"), Question(question: "Who is not a Marvel superhero?",  answers: ["batman", "superman", "spiderman", "ironman"], correctAnswer: "batman")]
+    
+    let mathQuestions = [Question(question: "What is 1+1", answers: ["3", "6", "2", "16"], correctAnswer: "2"), Question(question: "What is 3*1", answers: ["3", "6", "2", "16"], correctAnswer: "3")]
+    
+    let scienceQuestions = [Question(question: "What is 1+1", answers: ["3", "6", "2", "16"], correctAnswer: "2"), Question(question: "What is 3*1", answers: ["3", "6", "2", "16"], correctAnswer: "3")]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Load the sample data.
-        loadSampleMeals()
+        
+        self.navigationController?.navigationBar.topItem!.title = "Pick a quiz!"
     }
     
-    func loadSampleMeals() {
-        let marvelPic = UIImage(named: "Marvel")!
-        let marvelQuestion1 = ["question": "Who is a Marvel superhero?", "answer1": "batman", "answer2": "superman", "answer3": "spiderman", "answer4": "ironman", "correctAnswer": "4"]
-        let marvelQuestion2 = ["question": "Who is not a Marvel superhero?", "answer1": "batman", "answer2": "superman", "answer3": "spiderman", "answer4": "ironman", "correctAnswer": "1"]
-
-        let marvelQuestions = [marvelQuestion1, marvelQuestion2]
-        let marvel = Subject(name: "Marvel", image: marvelPic, description: "sadafd", questions: marvelQuestions)
-        
-        let mathPic = UIImage(named: "Math")!
-        let mathQuestion1 = ["question": "What is 1+1", "answer1": "3", "answer2": "6", "answer3": "2", "answer4": "16", "correctAnswer": "3"]
-        let mathQuestion2 = ["question": "What is 3*1", "answer1": "3", "answer2": "6", "answer3": "2", "answer4": "16", "correctAnswer": "3"]
-        let mathQuestions = [mathQuestion1, mathQuestion2]
-        let math = Subject(name: "Math", image: mathPic, description: "questions about math", questions: mathQuestions)
-        
-        let sciencePic = UIImage(named: "Science")!
-        let scienceQuestion1 = ["question": "What is 1+1", "answer1": "3", "answer2": "6", "answer3": "2", "answer4": "16", "correctAnswer": "3"]
-        let scienceQuestion2 = ["question": "What is 3*1", "answer1": "3", "answer2": "6", "answer3": "2", "answer4": "16", "correctAnswer": "3"]
-        let scienceQuestions = [scienceQuestion1, scienceQuestion2]
-        let science = Subject(name: "Science", image: sciencePic, description: "dsafdafsdfas", questions: scienceQuestions)
-        
-        subjects += [marvel, math, science]
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -58,7 +49,7 @@ class SubjectTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return subjects.count
+        return self.subjectNames.count
     }
 
     
@@ -69,11 +60,9 @@ class SubjectTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! SubjectTableViewCell
         
-        let subject = subjects[indexPath.row]
-
-        cell.subjectLabel.text = subject.name
-        cell.subjectImage.image = subject.image
-        cell.subjectDescription.text = subject.description
+        cell.subjectLabel.text = self.subjectNames[indexPath.row]
+        cell.subjectImage.image = self.subjectImages[indexPath.row]
+        cell.subjectDescription.text = self.subjectDescription[indexPath.row]
 
         return cell
     }
@@ -128,10 +117,20 @@ class SubjectTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue.identifier == "showQuiz" {
-            var SecondViewController : QuizViewController = segue.destinationViewController as! QuizViewController
+        let cell = sender as! SubjectTableViewCell?
+        
+        let questionController = segue.destinationViewController as! QuestionViewController
+        
+        switch cell?.subjectLabel.text! {
+            case "Marvel"? :
+                questionController.questions = self.marvelQuestions
+                questionController.navigationItem.title = "Marvel Quiz"
+            case "Math"? :
+                questionController.questions = self.mathQuestions
+                questionController.navigationItem.title = "Math Quiz"
+            default :
+                break
         }
-
         
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
