@@ -25,7 +25,7 @@ class SubjectTableViewController: UITableViewController {
     
     let mathQuestions = [Question(question: "What is 1+1", answers: ["3", "6", "2", "16"], correctAnswer: "2"), Question(question: "What is 3*1", answers: ["3", "6", "2", "16"], correctAnswer: "3")]
     
-    let scienceQuestions = [Question(question: "What is 1+1", answers: ["3", "6", "2", "16"], correctAnswer: "2"), Question(question: "What is 3*1", answers: ["3", "6", "2", "16"], correctAnswer: "3")]
+    let scienceQuestions = [Question(question: "What is 4+1", answers: ["3", "6", "5", "16"], correctAnswer: "5"), Question(question: "What is 3*2", answers: ["3", "6", "2", "16"], correctAnswer: "6")]
     
     
     override func viewDidLoad() {
@@ -67,14 +67,10 @@ class SubjectTableViewController: UITableViewController {
         return cell
     }
     
-    @IBAction func settings(sender: AnyObject) {
-        let alertController = UIAlertController(title: "Settings", message: "Settings go here", preferredStyle: .Alert)
-        
-        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-        alertController.addAction(defaultAction)
-        
-        presentViewController(alertController, animated: true, completion: nil)
+    @IBAction func exit(segue: UIStoryboardSegue) {
+        print("moved back to")
     }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -117,19 +113,27 @@ class SubjectTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        let cell = sender as! SubjectTableViewCell?
+        if segue.identifier == "settingsPopover" {
+            
+        } else {
+            
+            let cell = sender as! SubjectTableViewCell?
         
-        let questionController = segue.destinationViewController as! QuestionViewController
+            let questionController = segue.destinationViewController as! QuestionViewController
         
-        switch cell?.subjectLabel.text! {
-            case "Marvel"? :
-                questionController.questions = self.marvelQuestions
-                questionController.navigationItem.title = "Marvel Quiz"
-            case "Math"? :
-                questionController.questions = self.mathQuestions
-                questionController.navigationItem.title = "Math Quiz"
-            default :
-                break
+            switch cell?.subjectLabel.text! {
+                case "Marvel"? :
+                    questionController.questions = self.marvelQuestions
+                    questionController.navigationItem.title = "Marvel Quiz"
+                case "Math"? :
+                    questionController.questions = self.mathQuestions
+                    questionController.navigationItem.title = "Math Quiz"
+                case "Science"? :
+                    questionController.questions = self.scienceQuestions
+                    questionController.navigationItem.title = "Science Quiz"
+                default :
+                    break
+            }
         }
         
         // Get the new view controller using segue.destinationViewController.

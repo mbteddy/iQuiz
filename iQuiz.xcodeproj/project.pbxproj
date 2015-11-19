@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BEC039791BF5516C007F9571 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC039781BF5516C007F9571 /* QuestionViewController.swift */; };
+		BEC0397B1BFBF0DB007F9571 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC0397A1BFBF0DB007F9571 /* AnswerViewController.swift */; };
+		BEC0397D1BFBF7D5007F9571 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC0397C1BFBF7D5007F9571 /* NavViewController.swift */; };
+		BEC0397F1BFD2EDC007F9571 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC0397E1BFD2EDC007F9571 /* SettingsViewController.swift */; };
 		BECDBD8E1BE3F68200C95A89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECDBD8D1BE3F68200C95A89 /* AppDelegate.swift */; };
 		BECDBD901BE3F68200C95A89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECDBD8F1BE3F68200C95A89 /* ViewController.swift */; };
 		BECDBD931BE3F68200C95A89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BECDBD911BE3F68200C95A89 /* Main.storyboard */; };
@@ -38,6 +41,9 @@
 
 /* Begin PBXFileReference section */
 		BEC039781BF5516C007F9571 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		BEC0397A1BFBF0DB007F9571 /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
+		BEC0397C1BFBF7D5007F9571 /* NavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
+		BEC0397E1BFD2EDC007F9571 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BECDBD8A1BE3F68200C95A89 /* iQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECDBD8D1BE3F68200C95A89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BECDBD8F1BE3F68200C95A89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +112,9 @@
 				BECDBD8D1BE3F68200C95A89 /* AppDelegate.swift */,
 				BECDBD8F1BE3F68200C95A89 /* ViewController.swift */,
 				BECDBD911BE3F68200C95A89 /* Main.storyboard */,
+				BEC0397E1BFD2EDC007F9571 /* SettingsViewController.swift */,
+				BEC0397C1BFBF7D5007F9571 /* NavViewController.swift */,
+				BEC0397A1BFBF0DB007F9571 /* AnswerViewController.swift */,
 				BEC039781BF5516C007F9571 /* QuestionViewController.swift */,
 				BECDBDBD1BE46B1800C95A89 /* SubjectTableViewController.swift */,
 				BECDBDBB1BE4386700C95A89 /* SubjectTableViewCell.swift */,
@@ -268,11 +277,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEC0397B1BFBF0DB007F9571 /* AnswerViewController.swift in Sources */,
+				BEC0397D1BFBF7D5007F9571 /* NavViewController.swift in Sources */,
 				BECDBDBE1BE46B1800C95A89 /* SubjectTableViewController.swift in Sources */,
 				BEC039791BF5516C007F9571 /* QuestionViewController.swift in Sources */,
 				BECDBD901BE3F68200C95A89 /* ViewController.swift in Sources */,
 				BECDBDBC1BE4386700C95A89 /* SubjectTableViewCell.swift in Sources */,
 				BECDBD8E1BE3F68200C95A89 /* AppDelegate.swift in Sources */,
+				BEC0397F1BFD2EDC007F9571 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
